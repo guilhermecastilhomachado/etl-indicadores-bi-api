@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:17
+    container_name: postgres_indicadores_bi
+    environment:
+      POSTGRES_DB: indicadores_bi
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5435:5432"
+    volumes:
+      - dados_postgres_indicadores:/var/lib/postgresql/data
+
+volumes:
+  dados_postgres_indicadores:
